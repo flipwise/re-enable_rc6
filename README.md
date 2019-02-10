@@ -9,7 +9,7 @@ Since linux 4.16 the i915.enable_rc6 parameter has been disabled. This patch re-
 ## Instructions (for Manjaro)
 1. `git clone https://gitlab.manjaro.org/packages/core/linux420.git`
 2. `cd linux420/`
-3. put enable_rc6.patch in this folder and replace the PKGBUILD
+3. put re-enable_rc6.patch in this folder and replace the PKGBUILD
 4. `makepkg -s`[note: if getting checksums errors, do `makepkg -g` and then copy the hashes into the PKGBUILD file]
 5. copy all the files from build directory into the respective root directories
 6. `sudo mkinitcpio -p linux420`
