@@ -1,6 +1,6 @@
-diff -ura archlinux-linux.orig/drivers/gpu/drm/i915/i915_drv.c archlinux-linux.new/drivers/gpu/drm/i915/i915_drv.c
---- archlinux-linux.orig/drivers/gpu/drm/i915/i915_drv.c	2018-09-13 07:46:24.118646105 -0600
-+++ archlinux-linux.new/drivers/gpu/drm/i915/i915_drv.c	2018-09-13 07:43:57.437676520 -0600
+diff --git a/drivers/gpu/drm/i915/i915_drv.c b/drivers/gpu/drm/i915/i915_drv.c
+--- a/drivers/gpu/drm/i915/i915_drv.c	2018-09-13 07:46:24.118646105 -0600
++++ b/drivers/gpu/drm/i915/i915_drv.c	2018-09-13 07:43:57.437676520 -0600
 @@ -2901,7 +2901,7 @@
  	struct drm_i915_private *dev_priv = to_i915(dev);
  	int ret;
@@ -10,9 +10,9 @@ diff -ura archlinux-linux.orig/drivers/gpu/drm/i915/i915_drv.c archlinux-linux.n
  		return -ENODEV;
  
  	if (WARN_ON_ONCE(!HAS_RUNTIME_PM(dev_priv)))
-diff -ura archlinux-linux.orig/drivers/gpu/drm/i915/i915_drv.h archlinux-linux.new/drivers/gpu/drm/i915/i915_drv.h
---- archlinux-linux.orig/drivers/gpu/drm/i915/i915_drv.h	2018-09-13 07:46:24.118646105 -0600
-+++ archlinux-linux.new/drivers/gpu/drm/i915/i915_drv.h	2018-09-13 07:43:57.437676520 -0600
+diff --git a/drivers/gpu/drm/i915/i915_drv.h b/drivers/gpu/drm/i915/i915_drv.h
+--- a/drivers/gpu/drm/i915/i915_drv.h	2018-09-13 07:46:24.118646105 -0600
++++ b/drivers/gpu/drm/i915/i915_drv.h	2018-09-13 07:43:57.437676520 -0600
 @@ -2641,10 +2641,8 @@
  #define HAS_DDI(dev_priv)		 ((dev_priv)->info.has_ddi)
  #define HAS_FPGA_DBG_UNCLAIMED(dev_priv) ((dev_priv)->info.has_fpga_dbg)
@@ -24,9 +24,9 @@ diff -ura archlinux-linux.orig/drivers/gpu/drm/i915/i915_drv.h archlinux-linux.n
  
  #define HAS_CSR(dev_priv)	((dev_priv)->info.has_csr)
  
-diff -ura archlinux-linux.orig/drivers/gpu/drm/i915/i915_params.c archlinux-linux.new/drivers/gpu/drm/i915/i915_params.c
---- archlinux-linux.orig/drivers/gpu/drm/i915/i915_params.c	2018-09-13 07:46:24.118646105 -0600
-+++ archlinux-linux.new/drivers/gpu/drm/i915/i915_params.c	2018-09-13 07:43:57.437676520 -0600
+diff --git a/drivers/gpu/drm/i915/i915_params.c b/drivers/gpu/drm/i915/i915_params.c
+--- a/drivers/gpu/drm/i915/i915_params.c	2018-09-13 07:46:24.118646105 -0600
++++ b/drivers/gpu/drm/i915/i915_params.c	2018-09-13 07:43:57.437676520 -0600
 @@ -44,6 +44,13 @@
  	"Use kernel modesetting [KMS] (0=disable, "
  	"1=on, -1=force vga console preference [default])");
@@ -41,9 +41,9 @@ diff -ura archlinux-linux.orig/drivers/gpu/drm/i915/i915_params.c archlinux-linu
  i915_param_named_unsafe(enable_dc, int, 0400,
  	"Enable power-saving display C-states. "
  	"(-1=auto [default]; 0=disable; 1=up to DC5; 2=up to DC6)");
-diff -ura archlinux-linux.orig/drivers/gpu/drm/i915/i915_params.h archlinux-linux.new/drivers/gpu/drm/i915/i915_params.h
---- archlinux-linux.orig/drivers/gpu/drm/i915/i915_params.h	2018-09-13 07:46:24.118646105 -0600
-+++ archlinux-linux.new/drivers/gpu/drm/i915/i915_params.h	2018-09-13 07:43:57.437676520 -0600
+diff --git a/drivers/gpu/drm/i915/i915_params.h b/drivers/gpu/drm/i915/i915_params.h
+--- a/drivers/gpu/drm/i915/i915_params.h	2018-09-13 07:46:24.118646105 -0600
++++ b/drivers/gpu/drm/i915/i915_params.h	2018-09-13 07:43:57.437676520 -0600
 @@ -39,6 +39,7 @@
  	param(int, lvds_channel_mode, 0) \
  	param(int, panel_use_ssc, -1) \
@@ -52,9 +52,9 @@ diff -ura archlinux-linux.orig/drivers/gpu/drm/i915/i915_params.h archlinux-linu
  	param(int, enable_dc, -1) \
  	param(int, enable_fbc, -1) \
  	param(int, enable_ppgtt, -1) \
-diff -ura archlinux-linux.orig/drivers/gpu/drm/i915/i915_pmu.c archlinux-linux.new/drivers/gpu/drm/i915/i915_pmu.c
---- archlinux-linux.orig/drivers/gpu/drm/i915/i915_pmu.c	2018-09-13 07:46:24.118646105 -0600
-+++ archlinux-linux.new/drivers/gpu/drm/i915/i915_pmu.c	2018-09-13 11:46:59.797382316 -0600
+diff --git a/drivers/gpu/drm/i915/i915_pmu.c b/drivers/gpu/drm/i915/i915_pmu.c
+--- a/drivers/gpu/drm/i915/i915_pmu.c	2018-09-13 07:46:24.118646105 -0600
++++ b/drivers/gpu/drm/i915/i915_pmu.c	2018-09-13 11:46:59.797382316 -0600
 @@ -431,12 +431,13 @@
  				     VLV_GT_RENDER_RC6 :
  				     GEN6_GT_GFX_RC6);
@@ -74,9 +74,9 @@ diff -ura archlinux-linux.orig/drivers/gpu/drm/i915/i915_pmu.c archlinux-linux.n
  	return val;
  }
  
-diff -ura archlinux-linux.orig/drivers/gpu/drm/i915/i915_sysfs.c archlinux-linux.new/drivers/gpu/drm/i915/i915_sysfs.c
---- archlinux-linux.orig/drivers/gpu/drm/i915/i915_sysfs.c	2018-09-13 07:46:24.118646105 -0600
-+++ archlinux-linux.new/drivers/gpu/drm/i915/i915_sysfs.c	2018-09-13 07:43:57.437676520 -0600
+diff --git a/drivers/gpu/drm/i915/i915_sysfs.c b/drivers/gpu/drm/i915/i915_sysfs.c
+--- a/drivers/gpu/drm/i915/i915_sysfs.c	2018-09-13 07:46:24.118646105 -0600
++++ b/drivers/gpu/drm/i915/i915_sysfs.c	2018-09-13 07:43:57.437676520 -0600
 @@ -54,18 +54,7 @@
  static ssize_t
  show_rc6_mask(struct device *kdev, struct device_attribute *attr, char *buf)
@@ -97,9 +97,9 @@ diff -ura archlinux-linux.orig/drivers/gpu/drm/i915/i915_sysfs.c archlinux-linux
  }
  
  static ssize_t
-diff -ura archlinux-linux.orig/drivers/gpu/drm/i915/intel_drv.h archlinux-linux.new/drivers/gpu/drm/i915/intel_drv.h
---- archlinux-linux.orig/drivers/gpu/drm/i915/intel_drv.h	2018-09-13 07:46:24.118646105 -0600
-+++ archlinux-linux.new/drivers/gpu/drm/i915/intel_drv.h	2018-09-13 07:43:57.437676520 -0600
+diff --git a/drivers/gpu/drm/i915/intel_drv.h b/drivers/gpu/drm/i915/intel_drv.h
+--- a/drivers/gpu/drm/i915/intel_drv.h	2018-09-13 07:46:24.118646105 -0600
++++ b/drivers/gpu/drm/i915/intel_drv.h	2018-09-13 07:43:57.437676520 -0600
 @@ -2107,10 +2107,15 @@
  				 const struct skl_ddb_entry *ddb,
  				 int ignore);
@@ -116,9 +116,9 @@ diff -ura archlinux-linux.orig/drivers/gpu/drm/i915/intel_drv.h archlinux-linux.
  
  /* intel_sdvo.c */
  bool intel_sdvo_port_enabled(struct drm_i915_private *dev_priv,
-diff -ura archlinux-linux.orig/drivers/gpu/drm/i915/intel_guc.c archlinux-linux.new/drivers/gpu/drm/i915/intel_guc.c
---- archlinux-linux.orig/drivers/gpu/drm/i915/intel_guc.c	2018-09-13 07:46:24.118646105 -0600
-+++ archlinux-linux.new/drivers/gpu/drm/i915/intel_guc.c	2018-09-13 07:43:57.437676520 -0600
+diff --git a/drivers/gpu/drm/i915/intel_guc.c b/drivers/gpu/drm/i915/intel_guc.c
+--- a/drivers/gpu/drm/i915/intel_guc.c	2018-09-13 07:46:24.118646105 -0600
++++ b/drivers/gpu/drm/i915/intel_guc.c	2018-09-13 07:43:57.437676520 -0600
 @@ -490,8 +490,9 @@
  	u32 action[2];
  
@@ -131,9 +131,9 @@ diff -ura archlinux-linux.orig/drivers/gpu/drm/i915/intel_guc.c archlinux-linux.
  		action[1] = 0;
  	else
  		/* bit 0 and 1 are for Render and Media domain separately */
-diff -ura archlinux-linux.orig/drivers/gpu/drm/i915/intel_pm.c archlinux-linux.new/drivers/gpu/drm/i915/intel_pm.c
---- archlinux-linux.orig/drivers/gpu/drm/i915/intel_pm.c	2018-09-13 07:46:24.118646105 -0600
-+++ archlinux-linux.new/drivers/gpu/drm/i915/intel_pm.c	2018-09-13 07:43:57.447676586 -0600
+diff --git a/drivers/gpu/drm/i915/intel_pm.c b/drivers/gpu/drm/i915/intel_pm.c
+--- a/drivers/gpu/drm/i915/intel_pm.c	2018-09-13 07:46:24.118646105 -0600
++++ b/drivers/gpu/drm/i915/intel_pm.c	2018-09-13 07:43:57.447676586 -0600
 @@ -53,6 +53,9 @@
   * which brings the most power savings; deeper states save more power, but
   * require higher latency to switch to and wake up.
@@ -421,9 +421,9 @@ diff -ura archlinux-linux.orig/drivers/gpu/drm/i915/intel_pm.c archlinux-linux.n
  		return 0;
  
  	/*
-diff -ura archlinux-linux.orig/drivers/gpu/drm/i915/intel_uncore.c archlinux-linux.new/drivers/gpu/drm/i915/intel_uncore.c
---- archlinux-linux.orig/drivers/gpu/drm/i915/intel_uncore.c	2018-09-13 07:46:24.118646105 -0600
-+++ archlinux-linux.new/drivers/gpu/drm/i915/intel_uncore.c	2018-09-13 07:43:57.447676586 -0600
+diff --git a/drivers/gpu/drm/i915/intel_uncore.c b/drivers/gpu/drm/i915/intel_uncore.c
+--- a/drivers/gpu/drm/i915/intel_uncore.c	2018-09-13 07:46:24.118646105 -0600
++++ b/drivers/gpu/drm/i915/intel_uncore.c	2018-09-13 07:43:57.447676586 -0600
 @@ -594,6 +594,9 @@
  
  void intel_uncore_sanitize(struct drm_i915_private *dev_priv)
