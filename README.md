@@ -11,7 +11,7 @@ Since linux 4.16 the i915.enable_rc6 parameter has been disabled. This patch re-
 2. `cd linux420/`
 3. put re-enable_rc6.patch in this folder and replace the PKGBUILD
 4. `makepkg -s`[note: if getting checksums errors, do `makepkg -g` and then copy the hashes into the PKGBUILD file]
-5. copy all the files from build directory into the respective root directories
+5. copy all the files from the pkg directory into the respective root directories
 6. `sudo mkinitcpio -p linux420`
 7. `sudo update-grub`
 
@@ -22,4 +22,5 @@ Please direct non-Manjaro related questions and contributions to the original pa
 ## Author
 
 Arthur Eigenbrot - aeigenbrot at nso.edu [original patch]
+
 Filip Fila [Manjaro modifications]
